@@ -1,4 +1,4 @@
-<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no"><meta name="theme-color" content="#0a1220"><title>MATH SURVIVORS v6.2 · 10분 5개 스테이지</title><style>
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no"><meta name="theme-color" content="#0a1220"><title>MATH SURVIVORS v6.3 · 10분 5개 스테이지</title><style>
 :root{--ink:#eaf6fd;--sub:#a7bbd3;--panel:#112039;--edge:#3f607c;--mint:#79f4c3;--gold:#ffdc85}*{box-sizing:border-box}html,body{margin:0;height:100%;font-family:system-ui,-apple-system,'Noto Sans KR',sans-serif;background:#060e19;color:var(--ink)}body{overflow:hidden;touch-action:none}button{font:inherit;color:inherit;cursor:pointer}button:focus-visible{outline:3px solid #9bdffb}#shell{width:100%;height:100dvh;position:relative;overflow:hidden;display:flex;flex-direction:column;background:#0d1c26}#field{position:relative;flex:1;min-height:100px;overflow:hidden}canvas{display:block;width:100%;height:100%;touch-action:none}#topbar{position:absolute;top:0;left:0;right:0;z-index:5;padding:12px clamp(12px,3vw,32px) 14px;background:linear-gradient(#07111ee9,#07111e9e 73%,transparent);pointer-events:none}#toprow{display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap}#logo{font-size:clamp(12px,1.9vw,18px);font-weight:1000;letter-spacing:.8px;color:#a5fadd}#clock{font-variant-numeric:tabular-nums;font-size:clamp(20px,3.1vw,32px);font-weight:1000;text-shadow:0 2px 10px #000}#topright{display:flex;gap:9px;align-items:center;pointer-events:auto}.smallbtn{border:1px solid #47657b;background:#193149c9;padding:7px 11px;border-radius:10px;font-weight:900;font-size:13px}.bar{height:12px;background:#26364a;border:1px solid #60778d75;border-radius:20px;overflow:hidden}.fill{height:100%;width:100%;transition:width .15s}.hpfill{background:linear-gradient(90deg,#ee567a,#fa9e69)}.xpfill{background:linear-gradient(90deg,#4c9efb,#8cedfe)}#metergroup{display:grid;grid-template-columns:minmax(120px,1fr) minmax(120px,1fr);gap:14px;margin-top:8px}#metergroup label{display:flex;align-items:center;justify-content:space-between;font-size:11px;font-weight:800;margin-bottom:4px}#bottomhud{position:absolute;bottom:0;left:0;right:0;z-index:5;pointer-events:none;padding:12px max(12px,env(safe-area-inset-right)) max(14px,env(safe-area-inset-bottom));background:linear-gradient(transparent,#07121ddb)}#bottomrow{display:flex;gap:12px;align-items:end;justify-content:space-between}.slots{display:flex;flex-wrap:wrap;gap:5px;max-width:75%}.slot{width:41px;height:41px;border:1px solid #7196a58a;background:#10293ce3;border-radius:9px;display:flex;align-items:center;justify-content:center;position:relative;font-size:23px;box-shadow:0 2px 9px #0008}.slot small{position:absolute;bottom:0;right:2px;font-size:10px;color:#ffea9b;font-weight:900}.footerlabel{font-size:11px;color:#cee0ed;text-shadow:0 1px 5px #000;font-weight:800;text-align:right}#tip{position:absolute;left:50%;bottom:80px;transform:translateX(-50%);color:#e2ebfccc;font-size:11px;white-space:nowrap;text-shadow:0 1px 6px #000;pointer-events:none}#joy{position:absolute;bottom:105px;left:26px;width:116px;height:116px;border-radius:50%;border:2px solid #d4f0fa55;background:#a9d9e31c;pointer-events:none;display:none;z-index:4}#joynub{position:absolute;width:48px;height:48px;border-radius:50%;top:32px;left:32px;background:#a8e9ff88;border:2px solid #def9ff95}#overlay{position:absolute;inset:0;background:#030915d6;z-index:20;display:flex;align-items:center;justify-content:center;overflow-y:auto;padding:18px 12px;touch-action:pan-y}#overlay.hidden{display:none}.panel{width:min(100%,670px);max-height:min(94dvh,900px);overflow-y:auto;background:linear-gradient(145deg,#233b56 0%,#0b1d31 85%);border:1px solid #6683a4;border-radius:21px;padding:clamp(17px,4vw,30px);box-shadow:0 22px 80px #000c;text-align:center;margin:auto}.eyebrow{font-size:12px;letter-spacing:2.2px;color:#8fe6d3;font-weight:900}.heading{font-size:clamp(29px,7vw,49px);font-weight:1000;line-height:1.1;margin:8px 0 12px;letter-spacing:-1.2px;color:#f5ffff;text-shadow:0 0 22px #55d9c244}.sub{font-size:14px;line-height:1.8;color:#bdd5e8}.caps{color:var(--gold);font-weight:1000}.cta{display:block;width:100%;background:linear-gradient(100deg,#38d6b5,#41a6ed);border:0;border-radius:12px;padding:14px;color:#081725;font-weight:1000;font-size:16px;margin-top:12px}.alt{background:linear-gradient(100deg,#395773,#27415d);color:#ecf6ff;border:1px solid #6385a5}.choices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:18px 0 8px}.pick{min-height:159px;border:1px solid #6888a5;background:linear-gradient(165deg,#263b59,#152941);border-radius:13px;padding:13px 8px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:9px;justify-content:center}.pick:active,.cta:active{transform:scale(.975)}.pick .ic{font-size:38px;line-height:1.1}.pick b{font-size:15px}.pick p{font-size:12px;color:#afc9e1;line-height:1.45;margin:0}.pick em{font-size:11px;font-style:normal;color:#ffe1a0}.pick.evo{border-color:#ffda73;box-shadow:0 0 12px #e9ba4455}.details{background:#0b1a2c9e;border:1px solid #47627e;border-radius:12px;text-align:left;padding:12px 14px;font-size:12px;line-height:1.75;color:#c7d8ec;margin-top:14px}.answergrid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin:18px 0 8px}.ans{border:1px solid #7192af;background:#244363;color:#f3fbff;border-radius:12px;padding:13px 8px;min-height:57px;font-size:clamp(15px,3vw,20px);font-weight:900}.ans:active{background:#4f7495}.question{background:#0b223a;border:1px solid #658aaa;border-radius:12px;font-size:clamp(18px,3.3vw,23px);line-height:1.55;font-weight:900;padding:20px 12px;margin-top:16px}.pill{display:inline-block;background:#173e46;border:1px solid #4b9b8b;color:#bafce4;padding:5px 9px;border-radius:99px;font-size:11px;font-weight:900}.tiny{font-size:11px;color:#a9c4d8}.toast{position:absolute;z-index:7;top:114px;left:50%;transform:translateX(-50%);padding:9px 16px;background:#122b40e9;border:1px solid #6196b0;border-radius:20px;opacity:0;transition:opacity .2s;pointer-events:none;white-space:nowrap;font-weight:900;font-size:12px;box-shadow:0 4px 16px #0009}.toast.show{opacity:1}@media(max-width:560px){.choices{gap:7px}.pick{min-height:146px;padding:10px 5px}.pick .ic{font-size:28px}.pick b{font-size:12px}.pick p{font-size:11px}.panel{padding:17px 13px}.slot{width:34px;height:36px;font-size:18px}.footerlabel{font-size:9px}#topbar{padding:8px 10px 11px}#metergroup{gap:7px}#toprow{gap:5px}#logo{font-size:12px}}@media(max-height:660px){.panel{max-height:93dvh}.pick{min-height:122px}.heading{font-size:28px}#tip{display:none}}
 #labButton{background:linear-gradient(120deg,#4a2d8b,#294e80);border-color:#c095ff;font-size:12px;box-shadow:0 0 12px #a379ff55}
 #labButton:active{transform:scale(.96)}.lab-note{font-weight:800;color:#f0d9ff;font-size:12px;background:#44245b;border:1px solid #9e67c0;padding:7px 10px;border-radius:11px;margin:10px 0}.lab-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;margin:12px 0}.lab-item{padding:9px 3px;border-radius:10px;background:#152c45;border:1px solid #5c7a97;font-weight:900;font-size:12px}.lab-item.active{border:2px solid #eec77b;background:#3a3b50}.lab-item .ic{display:block;font-size:26px}.lab-actions{display:flex;flex-wrap:wrap;gap:7px;justify-content:center;margin:12px 0}.lab-actions button{padding:8px 11px;border:1px solid #7990c7;background:#27466b;border-radius:9px;font-size:13px;font-weight:900}.lab-actions button.active{background:#75519e;border-color:#ffe4aa}.lab-passives{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;margin:8px 0}.lab-passives button{font-size:11px;padding:7px 3px;min-height:42px;border:1px solid #456481;background:#18334b;border-radius:8px}.lab-passives button.active{border-color:#ffd181;background:#30496b}.lab-evo{color:#fce39c;font-weight:1000}#modeTag{display:none;position:absolute;z-index:8;left:50%;top:113px;transform:translateX(-50%);pointer-events:none;background:#3e2764b9;padding:6px 13px;border-radius:20px;font-size:11px;letter-spacing:.3px;border:1px solid #d2b3ff;color:#f3dfff;font-weight:900;white-space:nowrap}
@@ -115,7 +115,7 @@ Object.assign(WEAPONS,{
  kamui:{n:'차원흡수',icon:'🌀',type:'gravity',cd:20.8,d:0,desc:'2단계부터 등장! 원형 중력장에서 적을 끌어당겨 피해 없이 소멸 · 보스 소멸 면역',rare:true},
  serious:{n:'진심의 일격',icon:'👊',type:'serious',cd:10.8,d:260,desc:'3단계부터 등장! 주먹 한 번으로 전방 넓은 범위를 휩쓰는 강력한 충격파',rare:true},
  mecha:{n:'광검 기동전사',icon:'🤖',type:'mecha',cd:16.5,d:32,desc:'4단계부터 등장! 전투 로봇이 적을 추격하며 쌍광선검으로 연속 참격',rare:true},
- excalibur:{n:'엑스칼리버 · 성검 광휘',icon:'🌟',type:'excalibur',cd:21,d:340,desc:'5단계부터 등장! 성검 휘두르기 후 황금빛 초광역 광선 발사',rare:true}
+ excalibur:{n:'엑스칼리버 · 성검 광휘',icon:'🌟',type:'excalibur',cd:10.5,d:680,desc:'5단계부터 등장! 성검 휘두르기 후 황금빛 초광역 광선 발사',rare:true}
 });
 Object.assign(WEAPON_STAGES,{
  gate:['고대 황금문','차원 무기고','황금 병기군','왕의 무한 보물문','천공 황금 무기고'],
@@ -443,7 +443,7 @@ function drawFinalBossBullets(cam){
 
 function menu(){
  state='menu';finalBossMode=false;$('#bossHud').style.display='none';$('#bossAlert').classList.remove('show');$('#labHud').style.display='none';
- setOverlay(`<div class="eyebrow">MATH SURVIVORS v6.2 · 10분 × 5개 스테이지</div><div class="heading">MATH<br><span style="color:#7bf1c1">SURVIVORS</span></div><div class="sub"><b>10분 생존하면 스테이지 클리어!</b> 5개 지역의 배경·몬스터·보스가 각각 달라져.<br>다음 단계마다 적 체력과 공격력이 10%씩 증가해.</div><div class="details">🏫 학교 앞마당 → 📚 봉인된 도서관 → 🌲 정령의 숲 → 🌋 화염의 요새 → 🌌 차원의 틈<br>⚔️ 일반 무기 14종 + 히든 4종 · 각 무기의 진화·융합 유지<br>🏹 모든 적 투사체는 <b style="color:#ff5471">빨간색</b> · 해골 궁수 화살도 빨간색<br>👾 10분 안에 기본 몬스터 전 종류 순차 등장 · 단계별 고유 몬스터 추가<br>☠️ 2분 30초 / 5분 / 7분 / 9분에 단계별 정예·보스 출현<br>🎲 3분마다 도박 이벤트 · 히든 잭팟 2% 선택<br>📚 인수분해·이차방정식·이차함수 76문항<br>💚 HP 50% 이하에서 30초마다 수학 문제 · 정답 시 +20HP<br>🧬 영구 성장 3·5·10분에 각 1P · 기록은 별명별 브라우저 저장</div><button class="cta" id="newrun">▶ 스테이지 도전 시작</button><button class="cta alt" id="masterrun">🧪 무기 실험실 · 무한 허수아비</button><button class="cta alt" id="recordsOpen">🏆 스테이지 클리어 기록</button><button class="cta alt" id="metaOpen">🧬 영구 성장 · 사용 가능 ${meta.points}P</button><div class="tiny" style="margin-top:12px">🎮 WASD / 화살표 / 모바일 드래그 · 기존 영구 성장·무기 밸런스 유지 · 각 단계 맵 크기 1,660 × 930</div>`);
+ setOverlay(`<div class="eyebrow">MATH SURVIVORS v6.3 · 10분 × 5개 스테이지</div><div class="heading">MATH<br><span style="color:#7bf1c1">SURVIVORS</span></div><div class="sub"><b>10분 생존하면 스테이지 클리어!</b> 5개 지역의 배경·몬스터·보스가 각각 달라져.<br>다음 단계마다 적 체력과 공격력이 10%씩 증가해.</div><div class="details">🏫 학교 앞마당 → 📚 봉인된 도서관 → 🌲 정령의 숲 → 🌋 화염의 요새 → 🌌 차원의 틈<br>⚔️ 일반 무기 14종 + 히든 4종 · 각 무기의 진화·융합 유지<br>🏹 모든 적 투사체는 <b style="color:#ff5471">빨간색</b> · 해골 궁수 화살도 빨간색<br>👾 10분 안에 기본 몬스터 전 종류 순차 등장 · 단계별 고유 몬스터 추가<br>☠️ 2분 30초 / 5분 / 7분 / 9분에 단계별 정예·보스 출현<br>🎲 3분마다 도박 이벤트 · 히든 잭팟 2% 선택<br>📚 인수분해·이차방정식·이차함수 76문항<br>💚 HP 50% 이하에서 30초마다 수학 문제 · 정답 시 +20HP<br>🧬 영구 성장 3·5·10분에 각 1P · 기록은 별명별 브라우저 저장</div><button class="cta" id="newrun">▶ 스테이지 도전 시작</button><button class="cta alt" id="masterrun">🧪 무기 실험실 · 무한 허수아비</button><button class="cta alt" id="recordsOpen">🏆 스테이지 클리어 기록</button><button class="cta alt" id="metaOpen">🧬 영구 성장 · 사용 가능 ${meta.points}P</button><div class="tiny" style="margin-top:12px">🎮 WASD / 화살표 / 모바일 드래그 · 기존 영구 성장·무기 밸런스 유지 · 각 단계 맵 크기 1,660 × 930</div>`);
  $('#newrun').onclick=()=>{masterMode=false;eventMode=true;showPlayerSelect()};
  $('#masterrun').onclick=()=>{masterMode=true;eventMode=false;currentStage=1;start('sword');openLab()};
  $('#metaOpen').onclick=showMeta;$('#recordsOpen').onclick=showStageRecords;
@@ -1585,6 +1585,47 @@ function drawOrbitItem(k,lv,e,x,y,a){
  drawWeaponStageArt(k,lv,0,0,44,0,.88);
  ctx.restore();
 }
+function drawCrimsonEye(r,theta=0){
+ ctx.save();
+ const g=ctx.createRadialGradient(-r*.18,-r*.14,r*.05,0,0,r*1.32);
+ g.addColorStop(0,'#ffede9');g.addColorStop(.28,'#fd4054');g.addColorStop(.67,'#cb092d');g.addColorStop(1,'#24000d');
+ ctx.shadowColor='#ff1f3c';ctx.shadowBlur=r*.57;
+ // Almond-shaped eye socket, much bigger than the old miniature central rune.
+ ctx.fillStyle='#09000a';ctx.beginPath();ctx.moveTo(-r*1.42,0);
+ ctx.bezierCurveTo(-r*.78,-r*1.1,r*.8,-r*1.1,r*1.42,0);
+ ctx.bezierCurveTo(r*.77,r*1.10,-r*.77,r*1.1,-r*1.42,0);ctx.fill();
+ ctx.shadowBlur=r*.25;ctx.fillStyle=g;
+ ctx.beginPath();ctx.moveTo(-r*1.19,0);
+ ctx.bezierCurveTo(-r*.64,-r*.82,r*.64,-r*.82,r*1.19,0);
+ ctx.bezierCurveTo(r*.64,r*.82,-r*.64,r*.82,-r*1.19,0);ctx.fill();
+ // Red circular iris and black outline.
+ ctx.fillStyle='#db082a';ctx.strokeStyle='#140008';ctx.lineWidth=Math.max(3,r*.075);
+ ctx.beginPath();ctx.arc(0,0,r*.74,0,TAU);ctx.fill();ctx.stroke();
+ const ir=ctx.createRadialGradient(-r*.13,-r*.19,r*.10,0,0,r*.72);
+ ir.addColorStop(0,'#ff7380');ir.addColorStop(.45,'#f01d39');ir.addColorStop(1,'#9d001c');
+ ctx.fillStyle=ir;ctx.beginPath();ctx.arc(0,0,r*.675,0,TAU);ctx.fill();
+ // Distinct black ring, three comma-shaped tomoe arranged 120 degrees apart.
+ ctx.strokeStyle='#130008';ctx.lineWidth=Math.max(2,r*.038);
+ ctx.beginPath();ctx.arc(0,0,r*.54,0,TAU);ctx.stroke();
+ ctx.save();ctx.rotate(theta);
+ for(let j=0;j<3;j++){
+  ctx.save();ctx.rotate(j*TAU/3);ctx.translate(r*.53,0);ctx.rotate(Math.PI/2+.28);
+  const z=r*.145;
+  ctx.fillStyle='#090009';ctx.beginPath();
+  ctx.moveTo(-z*.75,0);
+  ctx.bezierCurveTo(-z*1.15,-z*1.18,z*.65,-z*1.40,z*.95,-z*.10);
+  ctx.bezierCurveTo(z*1.70,z*.32,z*1.65,z*1.85,z*2.2,z*2.1);
+  ctx.bezierCurveTo(z*.30,z*1.48,-z*.98,z*.82,-z*.75,0);
+  ctx.closePath();ctx.fill();ctx.restore();
+ }
+ ctx.restore();
+ ctx.shadowBlur=0;ctx.fillStyle='#090009';ctx.beginPath();ctx.arc(0,0,r*.19,0,TAU);ctx.fill();
+ ctx.fillStyle='#ffffff7c';ctx.beginPath();ctx.arc(-r*.19,-r*.29,r*.073,0,TAU);ctx.fill();
+ // A dark upper lash sharpens the recognizable eye silhouette.
+ ctx.strokeStyle='#090009';ctx.lineWidth=Math.max(3,r*.055);ctx.beginPath();ctx.moveTo(-r*1.40,0);
+ ctx.bezierCurveTo(-r*.71,-r*.95,r*.71,-r*.95,r*1.40,0);ctx.stroke();
+ ctx.restore();
+}
 function drawProjectile(s,cam){
  const x=s.x-cam.x,y=s.y-cam.y;
  if(x<-190||x>W+190||y<-190||y>H+190)return;
@@ -1613,22 +1654,9 @@ function drawProjectile(s,cam){
    }ctx.stroke();
   }
   ctx.globalCompositeOperation='source-over';ctx.save();ctx.scale(pulse,pulse);
-  // Original 4-rune crimson dimensional eye: distinct from any existing anime symbol.
-  const eyeR=Math.max(20,rr*.30),g=ctx.createRadialGradient(-eyeR*.13,-eyeR*.1,2,0,0,eyeR*1.4);
-  g.addColorStop(0,'#ffdbdf');g.addColorStop(.22,'#ff536b');g.addColorStop(.48,'#c5193e');g.addColorStop(.79,'#3a0728');g.addColorStop(1,'#100018');
-  ctx.shadowColor='#ff385f';ctx.shadowBlur=28+s.lv*1.5;ctx.strokeStyle='#ff9ca4';ctx.lineWidth=3.6;
-  ctx.beginPath();ctx.moveTo(-eyeR,0);ctx.quadraticCurveTo(0,-eyeR*.90,eyeR,0);ctx.quadraticCurveTo(0,eyeR*.90,-eyeR,0);ctx.closePath();ctx.fillStyle=g;ctx.fill();ctx.stroke();
-  ctx.shadowBlur=12;ctx.strokeStyle='#390014';ctx.lineWidth=2.5;ctx.beginPath();ctx.arc(0,0,eyeR*.43,0,TAU);ctx.stroke();
-  ctx.fillStyle='#080019';ctx.beginPath();ctx.ellipse(0,0,eyeR*.20,eyeR*.42,0,0,TAU);ctx.fill();
-  fillCircle(-eyeR*.12,-eyeR*.18,eyeR*.08,'#fff0ed');
-  // Four asymmetric diamond sigils orbit the iris rather than copying a three-tomoe motif.
-  ctx.rotate(-sw*.52);ctx.shadowColor='#ff4a73';ctx.shadowBlur=8;
-  for(let j=0;j<4;j++){
-   const a=j*TAU/4+.20,pr=eyeR*.71,cx=Math.cos(a)*pr,cy=Math.sin(a)*pr;
-   ctx.save();ctx.translate(cx,cy);ctx.rotate(a+.45);
-   ctx.fillStyle='#240012';ctx.strokeStyle='#ffb2ba';ctx.lineWidth=1.5;
-   ctx.beginPath();ctx.moveTo(0,-eyeR*.13);ctx.lineTo(eyeR*.09,0);ctx.lineTo(0,eyeR*.17);ctx.lineTo(-eyeR*.08,0);ctx.closePath();ctx.fill();ctx.stroke();ctx.restore();
-  }
+  // Vivid three-tomoe Sharingan-style red iris, rotating during the suction field.
+  const eyeR=Math.max(32,rr*.43);
+  drawCrimsonEye(eyeR,-sw*.55);
   ctx.restore();
   // Colored sparks bend toward the center.
   for(let j=0;j<Math.min(26,9+s.lv*2);j++){
@@ -1900,6 +1928,7 @@ function drawWeaponEffect(f,cam){
    const a=j*TAU/4+time*.3;ctx.save();ctx.rotate(a);ctx.strokeRect(-6,r*.74,12,12);ctx.restore()
   }
   if(burst){ctx.strokeStyle='#fff0f2';ctx.lineWidth=6;ctx.beginPath();ctx.arc(0,0,r*.8,0,TAU);ctx.stroke()}
+  if(!burst){ctx.save();ctx.rotate(-time*3.9);drawCrimsonEye(Math.min(50,r*.45),-time*2.5);ctx.restore()}
   ctx.restore();ctx.restore();return;
  }
  if(f.kind==='seriousPunch'){
